@@ -1,4 +1,3 @@
-
 \documentclass{article}
 \usepackage{graphicx}
 \usepackage[french]{babel}
@@ -8,8 +7,10 @@
 \usepackage[utf8]{inputenc}
 \usepackage{natbib}
 \usepackage[style=authoryear,backend=biber]{biblatex}
-\usepackage{hyperref}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=green,urlcolor=red]{hyperref}
+
 \usepackage{float}
+\usepackage{fancyhdr}
 
 \addbibresource{name.bib}
 
@@ -19,6 +20,11 @@
     left=20mm,
     top=30mm,
 }
+
+% Set up the fancy header and footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{Page \thepage}
 
 \title{
     \includegraphics[width=1\textwidth]{photo/UCLouvain_Charleroi.png} \\
@@ -48,45 +54,65 @@
 \newpage
 
 \section{Introduction}
-Dans ce projet, nous avons travaillé sur une application mobile innovante permettant 
-aux utilisateurs qui sont des requins de rencontrer d'autres requins, mais sans adopter le format traditionnel des applications
-de rencontres. Il s'agit d'un réseau social où les utilisateurs peuvent se retrouver pour 
-chasser des humains , consulter des publications, découvrir des événements, 
-et visionner des stories.\\\\
+Dans le cadre de ce projet, nous avons développé une application mobile innovante destinée aux requins souhaitant interagir avec d'autres requins dans un cadre social et compagine pour la chasse . 
+Contrairement aux applications traditionnelles de rencontres, notre solution se positionne comme un réseau social. 
+Elle permet aux utilisateurs de se connecter pour organiser des chasses humaines, consulter des publications, participer à des événements, et visionner des stories. 
 
-Nous nous appuyons sur les données d’un fichier CSV contenant des informations 
-sur différentes attaques de requins dans le monde. Ces données alimentent notre application 
-pour offrir une expérience riche et engageante.
+Nous nous sommes basés sur les données d' un fichier CSV contenant des informations détaillées 
+sur diverses attaques de requins dans le monde. 
+Ces données alimentent notre application et permettent de proposer une expérience utilisateur
+pertinente et immersive. Nous allons les étudiers plus précisement dans la suite de ce rapport 
+dans la partie \hyperref[sec:data]{"Data asbstraction"}
 
 \section{Personas}
-Voici différents personas représentant des clients potentiels de notre application. \\
+Voici les différents personas représentant des profils typiques de clients potentiels de notre 
+application. 
 
-\subsection*{Mon Persona : Sharko Zie}
-\includegraphics[width=1\textwidth]{photo/Personna_Sharkozie.png}\\
-
-Sharko Zie, un ancien président, est un utilisateur potentiel attiré par les fonctionnalités d'anonymat offertes par l'application. 
-La possibilité de masquer son identité et de modifier sa localisation grâce au mode premium répond à son besoin de discrétion. 
-Ces fonctionnalités sont particulièrement utiles lorsqu'il voyage, lui permettant de connecter avec de nouveaux partenaires de chasse tout en protégeant sa vie privée. \\
-
-\subsection*{Kaan Persona : Eric l’Athlète}
-\includegraphics[width=1\textwidth]{photo/Personna_Kaan.png}\\
-
-Eric est quelqu'un de très social qui aime avoir beaucoup d'amis et partager sa vie. Il serait un grand utilisateur des stories et des posts sur le fil d'actualité. 
-Malheureusement, l'ajout d'amis est limité à un certain nombre par jour dans la version gratuite. Toutefois, la version premium offre un ajout d'amis illimité, 
-ce qui conviendrait parfaitement à Eric. Par ailleurs, il n'apprécie pas la côte Est et pourrait donc utiliser le mode premium pour bloquer les utilisateurs de cette région 
-et ne pas les voir sur son fil. \\
-
-\subsection*{Nizar Persona : Bob Fisher}
+\subsection*{Perona : Acheteur}
+\subsubsection{Bob Fisher (Persona de Nizar)}
 \includegraphics[width=1\textwidth]{photo/Persona_Nizar.png}\\
 
-Bob Fisher est un entrepreneur australien passionné par les échecs. Il cherche une application qui lui permet de se détendre après le travail en organisant des sorties pour chasser
-des humains , sur les plages du monde entier.\\
+Bob Fisher, entrepreneur australien visionnaire, a identifié une opportunité unique sur le marché 
+des réseaux sociaux et des applications mobiles. Passionné par la chasse entre amis et les classements 
+des meilleurs chasseurs, il a imaginé une plateforme innovante où les requins pourraient se connecter
+pour organiser des chasses humaines près de chez eux, avec d’autres passionnés partageant les mêmes 
+intérêts, et ce, à travers le monde entier.\\
+
+En tant qu’homme très fortuné, Bob souhaite également intégrer une section premium à l’application, 
+destinée aux utilisateurs les plus aisés. Cette fonctionnalité exclusive offrirait des options
+avancées, telles que la possibilité de naviguer anonymement sur le site et de participer à 
+des activités privées, tout en garantissant un haut niveau de confidentialité et d’exclusivité.
+
+\subsection{Personas: Client}
+\subsubsection*{Sharko Zie (Mon Persona)}
+\includegraphics[width=1\textwidth]{photo/Personna_Sharkozie.png}\\
+
+Sharko Zie est un ancien président cherchant à préserver son anonymat tout en explorant de nouvelles 
+opportunités sociales. 
+Le mode premium de l'application, qui permet de masquer son identité et de modifier sa localisation,
+ est une fonctionnalité clé pour lui. 
+Lors de ses voyages, Sharko peut ainsi se connecter avec d'autres utilisateurs tout en protégeant
+ sa vie privée. 
+
+\subsubsection*{Eric l’Athlète (Persona de Kaan)}
+\includegraphics[width=1\textwidth]{photo/Personna_Kaan.png}\\
+
+Eric est un individu très sociable qui aime se connecter avec un grand nombre d’amis et partager 
+sa vie à travers des stories et des publications. 
+Cependant, il trouve la limite quotidienne d’ajouts d’amis dans la version gratuite contraignante. 
+Le mode premium, avec ajout d’amis illimité, répond parfaitement à ses attentes. 
+De plus, Eric peut bloquer les utilisateurs d’une région qu’il n’apprécie pas (comme la côte Est) 
+pour rendre son expérience plus agréable.
+
+
 
 \section{Basse-Fidélité}
-Nous avons exploré plusieurs propositions pour les versions basse-fidélité, avec des idées de différents personnes au sein du groupe et des approches variées (voir ci-dessous). 
-\includegraphics[width=1\textwidth]{photo/tableau.png}
-\newpage
-\subsection{les différentes propositions d'idées}
+Nous avons exploré différentes idées pour les versions basse-fidélité, illustrées par 
+les propositions suivantes : 
+
+\includegraphics[width=0.5\textwidth]{photo/tableau.png}
+
+\subsection{Propositions d’idées}
 \begin{figure}[H]
     \centering
     \begin{minipage}{0.4\textwidth}
@@ -116,37 +142,54 @@ Nous avons exploré plusieurs propositions pour les versions basse-fidélité, a
     \end{minipage}
 \end{figure}
 
-Ces idées, issues de nos réunions de groupe, nous ont permis de discuter de certains aspects
- de l'application, d'identifier des éléments clés à conserver, 
-et de proposer des évolutions pour améliorer l'expérience utilisateur générale. \\
+Ces idées, discutées lors de nos réunions, ont permis de retenir des éléments essentiels 
+et d’identifier des améliorations potentielles. 
 
+\newpage
 \subsection{Idées d'Alex}
 Dans \hyperref[fig:Alex]{l'idées d'Alex} il propose  de faire une messagerie pour garder
- un contact avec les nouveaux .
+ un contact avec ses amis et les nouvelles rencontres .
 
 \subsection{Idées de Nizar}
-Dans \hyperref[fig:Nizar]{l'idées de Nizar} lui a propose une page de réglages permettant de modfier le profil, photos mais surtout
+Dans \hyperref[fig:Nizar]{l'idées de Nizar} lui a propose une page de réglages permettant de 
+modfier le profil, photos mais surtout
 d'acceder au prémium et de voir les fonctionnalités possible à réaliser dans l'applis.
 
 \subsection{Idées de Kaan}
-Dans \hyperref [fig:Kaan]{l'idées de Kaan} il propose de faire une carte des follewers qui nous suivent sur l'appplis ainsi qu'un
-réseau qui montre les connexions entre nos amis et les amis de nos amis . Il propose aussi un page de profil on y trouve 
+Dans \hyperref[fig:Kaan]{l'idées de Kaan} il propose de faire une carte des follewers qui nous suivent et ceux qu'on suit aussi  sur l'appplis ainsi qu'un
+réseau qui montre les connexions entre nos amis et les amis de nos amis . Il propose aussi un page de profil où on y trouve 
 les infos sur la personne les interets le pourcentage de compatibilité  le classement général de chasse . 
 
 
 
+\subsection{Idée générale}
+\includegraphics[width=0.5\textwidth]{photo/Visu_basse_fidelité.jpg}\caption{Idée générale}
+\label{fig:général}
+\vspace{1cm}\\
+À la suite des discussions, nous avons abouti à une \hyperref[fig:général]{idée globale}. 
+Cette version inclut des fonctionnalités supplémentaires comme :
+\begin{enumerate}
+    \item Une page de préférences permettant de collecter des informations sur l’utilisateur et de calculer la compatibilité avec d’autres membres.
 
-\includegraphics[width=0.5\textwidth]{photo/Visu_basse_fidelité.jpg}\caption{Idées générales}
+    \item Une interface de connexion plus intuitive et complète.
 
+    \item Un bouton centralisé de navigation ("hub bouton") offrant un accès rapide aux principales 
+    pages de l’application.
+\end{enumerate}
+Apart ça nous avons amélioré ou gardé les idées de tous le monde . 
+
+\newpage
 \section{Data Abstraction}
-
+\label{sec:data}
+(Détails sur l'abstraction des données à venir…)
 
 \section{Task Abstraction}
-
+(Détails sur l'abstraction des tâches à venir…)
 
 \section{Conclusion}
-Ce rapport présente les bases du projet, incluant la conception d'une application unique, les personas utilisateurs, et les premières itérations de design basse-fidélité. 
-Grâce à l'analyse des données et à l'abstraction des tâches, nous avons pu identifier des fonctionnalités clés qui répondent aux besoins de nos utilisateurs. 
-Les prochaines étapes incluront l'amélioration des prototypes, l'intégration des données, et des tests utilisateurs.
+Ce rapport met en lumière le travail effectué sur le projet, incluant la définition des personas, 
+les premières versions basse-fidélité, et une vision globale des fonctionnalités. 
+Les prochaines étapes consisteront à affiner les prototypes, intégrer les données, et tester 
+les fonctionnalités avec des utilisateurs réels. 
 
 \end{document}

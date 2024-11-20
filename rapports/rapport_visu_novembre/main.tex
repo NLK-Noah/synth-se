@@ -1,3 +1,4 @@
+
 \documentclass{article}
 \usepackage{graphicx}
 \usepackage[french]{babel}
@@ -8,11 +9,9 @@
 \usepackage{natbib}
 \usepackage[style=authoryear,backend=biber]{biblatex}
 \usepackage{hyperref}
+\usepackage{float}
 
 \addbibresource{name.bib}
-
-
-
 
 \geometry{
     a4paper,
@@ -21,12 +20,10 @@
     top=30mm,
 }
 
-
-
 \title{
     \includegraphics[width=1\textwidth]{photo/UCLouvain_Charleroi.png} \\
     \vspace{1.5cm}
-    {\Huge \textbf{Rapport personnelle projet vis}} \\
+    {\Huge \textbf{Rapport Personnel \\ Projet Bite2Meet}} \\
     \vspace{1.5cm}
 }
 
@@ -41,7 +38,7 @@
 \date{
     \vspace{1.5cm}
     Durée de recherche : Septembre - Novembre \\
-     \vspace{1.5cm}
+    \vspace{1.5cm}
     \includegraphics[width=0.5\textwidth]{photo/EPL.png}
 }
 
@@ -49,64 +46,107 @@
 
 \maketitle
 \newpage
+
 \section{Introduction}
-Dans ce projet, nous avons travaillé sur une application mobile dont l'objectif est de permettre 
-aux utilisateurs de rencontrer des requins, mais sans adopter le format traditionnel des applications
-de rencontres. Il s'agit plutôt d'un réseau social où les utilisateurs peuvent se retrouver pour 
-"chasser" des humains, consulter des publications, découvrir des propositions d’événements, 
-et regarder des stories.\\\\
+Dans ce projet, nous avons travaillé sur une application mobile innovante permettant 
+aux utilisateurs qui sont des requins de rencontrer d'autres requins, mais sans adopter le format traditionnel des applications
+de rencontres. Il s'agit d'un réseau social où les utilisateurs peuvent se retrouver pour 
+chasser des humains , consulter des publications, découvrir des événements, 
+et visionner des stories.\\\\
 
-Ensemble, nous nous appuyons sur les données d’un fichier CSV contenant des informations 
-sur différentes attaques de requins dans le monde, données qui alimenteront bien sûr notre application.
-
+Nous nous appuyons sur les données d’un fichier CSV contenant des informations 
+sur différentes attaques de requins dans le monde. Ces données alimentent notre application 
+pour offrir une expérience riche et engageante.
 
 \section{Personas}
-Voici différents Personas qui sont des potentiels  clients de notre application \\
+Voici différents personas représentant des clients potentiels de notre application. \\
 
-Mon persona:\\
-
+\subsection*{Mon Persona : Sharko Zie}
 \includegraphics[width=1\textwidth]{photo/Personna_Sharkozie.png}\\
 
-Voici mon persona Sharko Zie \\
+Sharko Zie, un ancien président, est un utilisateur potentiel attiré par les fonctionnalités d'anonymat offertes par l'application. 
+La possibilité de masquer son identité et de modifier sa localisation grâce au mode premium répond à son besoin de discrétion. 
+Ces fonctionnalités sont particulièrement utiles lorsqu'il voyage, lui permettant de connecter avec de nouveaux partenaires de chasse tout en protégeant sa vie privée. \\
 
-Il serait interessé par l'applis et surtout de son mode prémium qui lui permet de garder l'anonymat
-car oui Sarko ne veut pas qu'on voit qu'un ancient président recherche des amis pour chasser mais aussi
-pour son VPN qui permet à Mr. Sharko Zie de changer sa localisation pour trouver des amis pour chasser
-quand il part en vacance . \\
-
-Kaan persona:\\
-
+\subsection*{Kaan Persona : Eric l’Athlète}
 \includegraphics[width=1\textwidth]{photo/Personna_Kaan.png}\\
 
-Voici Eric L'athlète\\
+Eric est quelqu'un de très social qui aime avoir beaucoup d'amis et partager sa vie. Il serait un grand utilisateur des stories et des posts sur le fil d'actualité. 
+Malheureusement, l'ajout d'amis est limité à un certain nombre par jour dans la version gratuite. Toutefois, la version premium offre un ajout d'amis illimité, 
+ce qui conviendrait parfaitement à Eric. Par ailleurs, il n'apprécie pas la côte Est et pourrait donc utiliser le mode premium pour bloquer les utilisateurs de cette région 
+et ne pas les voir sur son fil. \\
 
-Eric est quelqu'un de très social dans la vie il aime avoir beaucoup d'amis et partager sa vie il serait 
-un très grand client des stories et des posts sur le fil d'actualité .  Malheuresement l'applis à des ajouts 
-d'amis est limité par jours mais la version prémium peut changer cela et mettre l'ajout d'amis ilimité . 
-Eric n'aime pas la cote est ils seraient donc aussi client du prémium pour bloquer les gens de la cote est 
-pas les voirs sur son fil .\\
-
-
-Nizar persona : 
-
+\subsection*{Nizar Persona : Bob Fisher}
 \includegraphics[width=1\textwidth]{photo/Persona_Nizar.png}\\
 
-Voici Bob Fisher :\\
+Bob Fisher est un entrepreneur australien passionné par les échecs. Il cherche une application qui lui permet de se détendre après le travail en organisant des sorties pour chasser
+des humains , sur les plages du monde entier.\\
 
-Bob Fisher est un grand entrepreneur Australien , il est un grand fan échec et aimerait avoir une applis
-pour se détendre après le travail et aller chasser avec des gens de façon passifique des humains au bord 
-des plages du monde entier . 
+\section{Basse-Fidélité}
+Nous avons exploré plusieurs propositions pour les versions basse-fidélité, avec des idées de différents personnes au sein du groupe et des approches variées (voir ci-dessous). 
+\includegraphics[width=1\textwidth]{photo/tableau.png}
+\newpage
+\subsection{les différentes propositions d'idées}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.4\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{photo/Alex_basse_fidelité.jpg}
+        \caption{Idées d'Alex}
+        \label{fig:Alex}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.4\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{photo/Nizar_basse_fidelité.jpg}
+        \caption{Idées de Nizar}
+        \label{fig:Nizar}
+    \end{minipage}
+    \begin{minipage}{0.4\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{photo/Kaan_basse_fidelité.jpg}
+        \caption{Idées de Kaan (1/2)}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.4\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{photo/Kaan_basse_fidelité2.jpg}
+        \caption{Idées de Kaan (2/2)}
+        \label{fig:Kaan}
+    \end{minipage}
+\end{figure}
+
+Ces idées, issues de nos réunions de groupe, nous ont permis de discuter de certains aspects
+ de l'application, d'identifier des éléments clés à conserver, 
+et de proposer des évolutions pour améliorer l'expérience utilisateur générale. \\
+
+\subsection{Idées d'Alex}
+Dans \hyperref[fig:Alex]{l'idées d'Alex} il propose  de faire une messagerie pour garder
+ un contact avec les nouveaux .
+
+\subsection{Idées de Nizar}
+Dans \hyperref[fig:Nizar]{l'idées de Nizar} lui a propose une page de réglages permettant de modfier le profil, photos mais surtout
+d'acceder au prémium et de voir les fonctionnalités possible à réaliser dans l'applis.
+
+\subsection{Idées de Kaan}
+Dans \hyperref [fig:Kaan]{l'idées de Kaan} il propose de faire une carte des follewers qui nous suivent sur l'appplis ainsi qu'un
+réseau qui montre les connexions entre nos amis et les amis de nos amis . Il propose aussi un page de profil on y trouve 
+les infos sur la personne les interets le pourcentage de compatibilité  le classement général de chasse . 
 
 
 
-\section{Basse-fidélité}
 
-\section{Data abstraction}
+\includegraphics[width=0.5\textwidth]{photo/Visu_basse_fidelité.jpg}\caption{Idées générales}
 
-\section{Task abstraction}
+\section{Data Abstraction}
+
+
+\section{Task Abstraction}
 
 
 \section{Conclusion}
-
+Ce rapport présente les bases du projet, incluant la conception d'une application unique, les personas utilisateurs, et les premières itérations de design basse-fidélité. 
+Grâce à l'analyse des données et à l'abstraction des tâches, nous avons pu identifier des fonctionnalités clés qui répondent aux besoins de nos utilisateurs. 
+Les prochaines étapes incluront l'amélioration des prototypes, l'intégration des données, et des tests utilisateurs.
 
 \end{document}

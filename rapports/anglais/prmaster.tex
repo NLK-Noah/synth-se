@@ -8,6 +8,9 @@
 \usepackage{natbib}
 \usepackage[style=authoryear,backend=biber]{biblatex}
 \usepackage{hyperref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
 
 \geometry{
     a4paper,
@@ -15,6 +18,17 @@
     left=20mm,
     top=30mm,
 }
+
+\fancypagestyle{premierepage}{
+    \fancyhf{} % Supprime les en-têtes et pieds de page par défaut
+    \lhead{\includegraphics[width=2cm]{logo.png} , LANGL1183 L.MEYERS November 2024}
+    \chead{}
+    \rhead{ Page \thepage , Moussaoui Noah  }
+    \lfoot{Confidentiel}
+    \cfoot{}
+    \rfoot{Page \thepage}
+}
+
 
 \addbibresource{name.bib}
 \begin{document}
@@ -39,7 +53,7 @@
     \vspace{1.5cm}
      temps de travail: November 26 \\
     \vspace{1.5cm}
-    \includegraphics[width=0.5\textwidth]{photo/EPL.jpeg}
+    \includegraphics[width=0.5\textwidth]{/home/worknoah/Bureau/Noah-ucl/bac2/synth-se/photo/EPL.jpeg}
 }
 
 % Make title
